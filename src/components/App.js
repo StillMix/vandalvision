@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true)
    setTimeout(() => {
       setLoading(false)
+      localStorage.setItem("arc", "Lilo2")
    }, 3000)
 
   return (

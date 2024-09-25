@@ -1,277 +1,638 @@
 /* Анимация затемнения */
-@keyframes fadeIn {
-    from {
-      background: rgba(0, 0, 0, 0);
-    }
-    to {
-      background: rgba(0, 0, 0, 0.5);
-    }
-  }
-  
-  @keyframes fadeOut {
-    from {
-      background: rgba(0, 0, 0, 0.5);
-    }
-    to {
-      background: rgba(0, 0, 0, 0);
-    }
-  }
-  
-  /* Анимация всплывающего окна */
-  @keyframes slideUp {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideDown {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(100%);
-    }
-  }
-  
-  .main {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .main__popup {
-    border-radius: 1.04vw; /* 20px на экране 1920px */
-    width: 45vw; /* Примерно 865px на экране 1920px */
-    height: 53vh; /* Примерно 576px на экране 1080px */
-    background: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .main__popup__containerTitle {
-    width: 42vw; /* Примерно 805px на экране 1920px */
-    height: 17.5vh; /* Примерно 189px на экране 1080px */
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.56vh; /* 30px */
-  }
-  
-  .main__popup__containerTitle__con__title {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: clamp(0.625rem, -0.1269rem + 6.015vw, 3.125rem);/* Примерно 50px на экране 1920px */
-    color: #fff;
-    width: 22vw; /* Примерно 424px */
-  }
-  
-  .main__popup__containerTitle__con__subtitle {
-    margin-top: 0;
-    margin-top: 0.93vh; /* 10px */
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 1.04vw; /* Примерно 20px */
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .main__popup__containerTitle__navlink {
-    width: 11.8vw; /* Примерно 227px */
-    height: 2.78vh; /* Примерно 30px */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 0.73vw; /* Примерно 14px */
-    color: #2bc6b3;
-  }
-  
-  .main__popup__containerTitle__navlink__img {
-    width: 1.61vw; /* 31px */
-    height: 2.78vh; /* 30px */
-  }
-  
-  .main__popup__containerInput {
-    width: 42vw; /* Примерно 805px */
-    height: 4.63vh; /* Примерно 50px */
-    margin-top: 16.85vh; /* Примерно 182px */
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .main__popup__containerInput__input {
-    border-radius: 7.29vw; /* 140px */
-    width: 34.63vw; /* Примерно 665px */
-    height: 4.63vh; /* Примерно 50px */
-    background: #242424;
-    padding-left: 1.56vw; /* Примерно 30px */
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 0.73vw; /* Примерно 14px */
-    color: #fff;
-  }
-  
-  .main__popup__containerInput__input::placeholder {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 0.73vw; /* Примерно 14px */
+@keyframes blink {
+  0%,
+  100% {
     color: rgba(255, 255, 255, 0.2);
   }
-  
-  .main__popup__containerInput__btn {
-    border-radius: 7.29vw; /* 140px */
-    width: 5.63vw; /* Примерно 108px */
-    height: 4.63vh; /* Примерно 50px */
-    background: #fff;
+  50% {
+    color: #fff;
   }
-  
-  .main__popup__containerBtns {
-    width: 42vw; /* Примерно 805px */
-    height: 2.78vh; /* Примерно 30px */
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.56vh; /* 30px */
-  }
-  
-  .main__popup__containerBtns__title {
-    width: 20.73vw; /* Примерно 398px */
-    height: 2.78vh; /* Примерно 30px */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 0.73vw; /* Примерно 14px */
-    color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .main__popup__containerBtns__title__img {
-    width: 1.56vw; /* 30px */
-    height: 2.78vh; /* 30px */
-  }
-  
-  .main__popup__containerBtns__btn {
-    width: 7.34vw; /* Примерно 141px */
-    height: 2.78vh; /* Примерно 30px */
-    background: transparent;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 0.73vw; /* Примерно 14px */
-    color: #e74b4b;
-  }
-  
-  .main__popup__containerBtns__btn__img {
-    width: 1.61vw; /* Примерно 31px */
-    height: 2.78vh; /* Примерно 30px */
-  }
-  
-  .main__popup__containerImgQuest {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: end;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 1.04vw; /* 20px */
-  }
-  
-  .main__popup__containerImgQuest__popup {
-    border-radius: 1.04vw; /* 20px */
-    width: 45vw; /* Примерно 865px */
-    height: 28.52vh; /* Примерно 308px */
-    background: #1c1c1c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+}
 
-  /* Применение анимации при открытии */
+@keyframes opIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+/* Анимация всплывающего окна */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideUpImg {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideDownImg {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.main__loading__title__span {
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+  animation: blink 2s infinite;
+}
+
+.main__loading__title__span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* Задайте задержку для каждой точки */
+.main__loading__title__span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.main__loading__title__span:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main__popup {
+  border-radius: 1.04vw; /* 20px на экране 1920px */
+  width: 45vw; /* Примерно 865px на экране 1920px */
+  height: 53vh; /* Примерно 576px на экране 1080px */
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main__popup__containerTitle {
+  width: 42vw; /* Примерно 805px на экране 1920px */
+  height: 17.5vh; /* Примерно 189px на экране 1080px */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.56vh; /* 30px */
+}
+
+.main__start.fade-in {
+  animation: opIn 0.7s forwards;
+}
+
+.main__start.fade-out {
+  animation: opOut 0.7s forwards;
+}
+
+.main__loading.fade-in {
+  animation: opIn 0.7s forwards;
+}
+
+.main__loading.fade-out {
+  animation: opOut 0.7s forwards;
+}
+
+.main__imgs__op.slideDownImg {
+  animation: opIn 0.5s forwards;
+}
+
+.main__imgs__op.slideUpImg {
+  animation: opOut 0.5s forwards;
+}
+
+.main__err.fade-in {
+  animation: opIn 0.7s forwards;
+}
+
+.main__err.fade-out {
+  animation: opOut 0.7s forwards;
+}
+
+.main__imgs__img.slideDownImg {
+  animation: slideDownImg 0.7s forwards;
+}
+
+.main__imgs__img.slideUpImg {
+  animation: slideUpImg 0.7s forwards;
+}
+
+.main__loading__err.fade-in {
+  animation: opIn 0.7s forwards;
+}
+
+.main__popup__containerTitle__con__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 2.6vw; /* Примерно 50px на экране 1920px */
+  color: #fff;
+  width: 22vw; /* Примерно 424px */
+}
+
+.main__popup__containerTitle__con__subtitle {
+  margin-top: 0;
+  margin-top: 0.93vh; /* 10px */
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.04vw; /* Примерно 20px */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main__popup__containerTitle__navlink {
+  width: 11.8vw; /* Примерно 227px */
+  height: 2.78vh; /* Примерно 30px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px */
+  color: #2bc6b3;
+}
+
+.main__popup__containerTitle__navlink__img {
+  width: 1.61vw; /* 31px */
+  height: 2.78vh; /* 30px */
+}
+
+.main__popup__containerInput {
+  width: 42vw; /* Примерно 805px */
+  height: 4.63vh; /* Примерно 50px */
+  margin-top: 16.85vh; /* Примерно 182px */
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__popup__containerInput__input {
+  border-radius: 7.29vw; /* 140px */
+  width: 34.63vw; /* Примерно 665px */
+  height: 4.63vh; /* Примерно 50px */
+  background: #242424;
+  padding-left: 1.56vw; /* Примерно 30px */
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px */
+  color: #fff;
+}
+
+.main__popup__containerInput__input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.main__popup__containerInput__btn {
+  cursor: pointer;
+  border-radius: 7.29vw; /* 140px */
+  width: 5.63vw; /* Примерно 108px */
+  height: 4.63vh; /* Примерно 50px */
+  background: #fff;
+}
+
+.main__popup__containerInput__btn__img {
+  width: 31px;
+  height: 30px;
+}
+
+.main__popup__containerBtns {
+  width: 42vw; /* Примерно 805px */
+  height: 2.78vh; /* Примерно 30px */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.56vh; /* 30px */
+}
+
+.main__popup__containerBtns__title {
+  width: 20.73vw; /* Примерно 398px */
+  height: 2.78vh; /* Примерно 30px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.main__popup__containerBtns__title__img {
+  width: 1.56vw; /* 30px */
+  height: 2.78vh; /* 30px */
+}
+
+.main__popup__containerBtns__btn {
+  width: 7.34vw; /* Примерно 141px */
+  height: 2.78vh; /* Примерно 30px */
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px */
+  color: #e74b4b;
+}
+
+.main__popup__containerBtns__btn__img {
+  width: 1.61vw; /* Примерно 31px */
+  height: 2.78vh; /* Примерно 30px */
+}
+
+.main__popup__containerImgQuest {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: end;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1.04vw; /* 20px */
+}
+
+.main__popup__containerImgQuest__popup {
+  border-radius: 1.04vw; /* 20px */
+  width: 45vw; /* Примерно 865px */
+  height: 28.52vh; /* Примерно 308px */
+  background: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Применение анимации при открытии */
 .main__popup__containerImgQuest.fade-in {
-    animation: fadeIn 0.7s forwards;
-  }
-  
-  .main__popup__containerImgQuest.fade-out {
-    animation: fadeOut 0.7s forwards;
-  }
-  
-  /* Применение анимации для окна */
-  .main__popup__containerImgQuest__popup.slide-up {
-    animation: slideUp 0.7s forwards;
-  }
-  
-  .main__popup__containerImgQuest__popup.slide-down {
-    animation: slideDown 0.7s forwards;
-  }
-  
-  .main__popup__containerImgQuest__popup__img {
-    width: 12.917vw; /* Примерно 248px */
-    height: 22.964vh; /* Примерно 248px */
-    object-fit: contain;
-  }
-  
-  .main__popup__containerImgQuest__popup__containerText {
-    width: 18.542vw; /* Примерно 356px */
-    height: 22.964vh; /* Примерно 248px */
-    margin-left: 1.04vw; /* Примерно 20px */
-  }
-  
-  .main__popup__containerImgQuest__popup__containerText__title {
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 1.3vw; /* Примерно 25px */
-    color: #fff;
-  }
-  
-  .main__popup__containerImgQuest__popup__containerText__subtitle {
-    font-family: var(--font-family);
-    font-weight: 500;
-    margin-top: 0.93vh; /* Примерно 10px */
-    font-size: 1.04vw; /* Примерно 20px */
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .main__popup__containerImgQuest__popup__containerBtn {
-    height: 22.964vh; /* Примерно 248px */
-    width: 7.92vw; /* Примерно 152px */
-    display: flex;
-    align-items: end;
-    margin-left: 1.51vw; /* Примерно 29px */
-  }
-  
-  .main__popup__containerImgQuest__popup__containerBtn__btn {
-    cursor: pointer;
-    background: transparent;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4.63vh; /* Примерно 50px */
-    border: none;
-    color: #ffffff;
-    font-size: 1.04vw; /* Примерно 20px */
-  }
-  
-  .main__popup__containerImgQuest__popup__containerBtn__btn__img {
-    width: 1.61vw; /* Примерно 31px */
-    height: 4.63vh; /* Примерно 50px */
-  }
-  
+  animation: fadeIn 0.7s forwards;
+}
+
+.main__popup__containerImgQuest.fade-out {
+  animation: fadeOut 0.7s forwards;
+}
+
+/* Применение анимации для окна */
+.main__popup__containerImgQuest__popup.slide-up {
+  animation: slideUp 0.7s forwards;
+}
+
+.main__popup__containerImgQuest__popup.slide-down {
+  animation: slideDown 0.7s forwards;
+}
+
+.main__popup__containerImgQuest__popup__img {
+  width: 12.917vw; /* Примерно 248px */
+  height: 22.964vh; /* Примерно 248px */
+  object-fit: contain;
+}
+
+.main__popup__containerImgQuest__popup__containerText {
+  width: 18.542vw; /* Примерно 356px */
+  height: 22.964vh; /* Примерно 248px */
+  margin-left: 1.04vw; /* Примерно 20px */
+}
+
+.main__popup__containerImgQuest__popup__containerText__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.3vw; /* Примерно 25px */
+  color: #fff;
+}
+
+.main__popup__containerImgQuest__popup__containerText__subtitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  margin-top: 0.93vh; /* Примерно 10px */
+  font-size: 1.04vw; /* Примерно 20px */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main__popup__containerImgQuest__popup__containerBtn {
+  height: 22.964vh; /* Примерно 248px */
+  width: 7.92vw; /* Примерно 152px */
+  display: flex;
+  align-items: end;
+  margin-left: 1.51vw; /* Примерно 29px */
+}
+
+.main__popup__containerImgQuest__popup__containerBtn__btn {
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.63vh; /* Примерно 50px */
+  border: none;
+  color: #ffffff;
+  font-size: 1.04vw; /* Примерно 20px */
+}
+
+.main__popup__containerImgQuest__popup__containerBtn__btn__img {
+  width: 1.61vw; /* Примерно 31px */
+  height: 4.63vh; /* Примерно 50px */
+}
+
+.main__loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  border-radius: 1.04vw; /* 20px на экране 1920px */
+}
+
+.main__loading__title {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.04vw; /* Примерно 20px на экране 1920px */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.main__loading__title__img {
+  width: 2.08vw; /* Примерно 40px на экране 1920px */
+  height: 2.08vw; /* Примерно 40px на экране 1920px */
+}
+
+.main__loading__title__span__title {
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+  color: #fff;
+}
+
+.main__loading__err {
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  position: absolute;
+  bottom: 1.56vh; /* Примерно 30px на экране 1080px */
+}
+
+.main__loading__err__img {
+  width: 1.56vw; /* Примерно 30px на экране 1920px */
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+}
+
+.main__loading__err span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: 10px;
+}
+
+.main__err {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  border-radius: 1.04vw;
+}
+
+.main__err__title {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.04vw; /* Примерно 20px на экране 1920px */
+}
+.main__err__back__btn {
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+}
+
+.main__imgs__op__container__btns__back {
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.main__imgs__op__container__btns__back span {
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+}
+
+.main__imgs__op__container__btns__back__img,
+.main__imgs__op__container__btns__fullscreen__img {
+  width: 1.56vw; /* Примерно 30px на экране 1920px */
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+}
+
+.main__imgs__op__container__btns__fullscreen {
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 1.85vh; /* Примерно 20px на экране 1080px */
+  right: 1.04vw; /* Примерно 20px на экране 1920px */
+}
+
+.main__imgs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  border-radius: 1.04vw; /* Примерно 20px на экране 1920px */
+  position: relative;
+}
+
+.main__imgs__img {
+  width: 45vw; /* Примерно 865px на экране 1920px */
+  height: 53vh;
+  border-radius: 1.04vw; /* Примерно 20px на экране 1920px */
+  object-fit: cover;
+}
+
+.main__imgs__op {
+  width: 45vw; /* Примерно 865px на экране 1920px */
+  height: 53vh;
+  position: absolute;
+  z-index: 2;
+  border-radius: 1.04vw; /* Примерно 20px на экране 1920px */
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, #1c1c1c 0%, rgba(28, 28, 28, 0) 100%);
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.main__imgs__op__container {
+  width: 41.93vw; /* Примерно 805px на экране 1920px */
+  height: 16.67vh; /* Примерно 180px на экране 1080px */
+  margin-bottom: 2.78vh; /* Примерно 30px на экране 1080px */
+}
+
+.main__imgs__op__container__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 2.08vw; /* Примерно 40px на экране 1920px */
+  color: #fff;
+}
+
+.main__imgs__op__container__opcon__card {
+  display: flex;
+  align-items: center;
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+}
+
+.main__imgs__op__container__opcon__card:last-child {
+  margin-top: 0.52vw; /* Примерно 10px на экране 1920px */
+}
+
+.main__imgs__op__container__opcon__card span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+}
+
+.main__imgs__op__container__opcon__card span span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.26vw; /* Примерно 5px на экране 1920px */
+  border-radius: 60px;
+  padding: 0.21vw 0.52vw; /* Примерно 4px 10px на экране 1920px */
+  background: #a83939;
+}
+
+.main__imgs__op__container__opcon {
+  margin-top: 0.52vw; /* Примерно 10px на экране 1920px */
+  width: 21.41vw; /* Примерно 411px на экране 1920px */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main__imgs__op__container__btns {
+  width: 9.22vw; /* Примерно 177px на экране 1920px */
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.04vw; /* Примерно 20px на экране 1920px */
+}
+
+.main__loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  border-radius: 1.04vw; /* Примерно 20px на экране 1920px */
+}
+
+.main__loading__title {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 1.04vw; /* Примерно 20px на экране 1920px */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.main__loading__title__img {
+  width: 2.08vw; /* Примерно 40px на экране 1920px */
+  height: 2.08vw; /* Примерно 40px на экране 1920px */
+}
+
+.main__loading__title__span {
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+  color: #fff;
+}
+
+.main__loading__err {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 2.78vh; /* Примерно 30px на экране 1080px */
+}
+
+.main__loading__err__img {
+  width: 1.56vw; /* Примерно 30px на экране 1920px */
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+}
+
+.main__loading__err span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.4);
+}
 
 .main__copyrite {
   width: 247px;
@@ -294,4 +655,149 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.2);
   margin-top: 13.63px;
+}
+
+.popupOpenImg {
+  position: absolute;
+  z-index: 501;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Темный фон для лучшего фокуса на изображении */
+}
+
+@keyframes scaleIn {
+  from {
+    width: 45vw; /* Примерно 865px на экране 1920px */
+    height: 53vh;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    width: 100vw;
+    height: 100vh;
+  }
+  to {
+    width: 45vw; /* Примерно 865px на экране 1920px */
+    height: 53vh;
+  }
+}
+
+.popupOpenImg__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.popupOpenImg__img.open {
+  animation: scaleIn 0.7s forwards;
+}
+
+.popupOpenImg__img.close {
+  animation: scaleOut 0.7s forwards;
+}
+
+.popupOpenImg__op {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 266px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+
+.popupOpenImg__op__containerTitle{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+}
+
+.popupOpenImg__op__containerTitle__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.popupOpenImg__op__containerTitle__con{
+  display: flex;
+  justify-content: space-between;
+  width: 21.41vw;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+
+.popupOpenImg__op__containerTitle__con__card {
+  display: flex;
+  align-items: center;
+  height: 1.56vw; /* Примерно 30px на экране 1920px */
+}
+
+.popupOpenImg__op__containerTitle__con__card:last-child {
+  margin-top: 0.52vw; /* Примерно 10px на экране 1920px */
+}
+
+.popupOpenImg__op__containerTitle__con__card span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.52vw; /* Примерно 10px на экране 1920px */
+}
+
+.popupOpenImg__op__containerTitle__con__card span span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.73vw; /* Примерно 14px на экране 1920px */
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 0.26vw; /* Примерно 5px на экране 1920px */
+  border-radius: 60px;
+  padding: 0.21vw 0.52vw; /* Примерно 4px 10px на экране 1920px */
+  background: #a83939;
+}
+
+
+.popupOpenImg__op__containerBtn{
+  display: flex;
+  align-items: end;
+}
+
+.popupOpenImg__op__containerBtn__btn{
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 30px;
+}
+
+.popupOpenImg__op__containerBtn__btn__img{
+  width: 30px;
+  height: 30px;
+}
+
+.popupOpenImg__op__containerBtn__btn span{
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+color: #fff;
+margin-left: 10px;
 }
