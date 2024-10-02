@@ -1,0 +1,139 @@
+@keyframes opIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes widthOut {
+  from {
+    width: 1394px;
+    height: 784px;
+  }
+  to {
+    width: 865px;
+    height: 576px;
+  }
+}
+
+.admin__popup.fade-out {
+  animation: widthOut 0.7s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.admin__start.fade-in {
+  animation: opIn 0.7s ease-in-out forwards;
+}
+
+.admin__start.fade-out {
+  animation: opOut 0.7s ease-in-out forwards;
+}
+
+.admin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.admin__popup {
+  border-radius: 20px;
+  width: 1394px;
+  height: 784px;
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin__start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin__start__header {
+  width: 1334px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.admin__start__header__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+}
+
+.admin__start__header__title span {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 26px;
+}
+
+.admin__start__header__btn {
+  width: 281px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #e74b4b;
+}
+
+.admin__start__header__btn__img{
+    width: 30px;
+    height: 30px;
+}
+/**/
+.admin__copyrite {
+  width: 247px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 40px;
+  z-index: 1;
+  gap: 14px;
+}
+
+.admin__copyrite__img {
+  width: 212px;
+  height: 22px;
+}
+
+.admin__copyrite__text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,246 @@
+@keyframes opIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes widthIn {
+  from {
+    width: 865px;
+    height: 576px;
+  }
+  to {
+    width: 1394px;
+    height: 784px;
+  }
+}
+
+@keyframes widthOut {
+  from {
+    width: 1394px;
+    height: 784px;
+  }
+  to {
+    width: 865px;
+    height: 576px;
+  }
+}
+
+.signin__popup.fade-in {
+  animation: widthIn 1s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+.signin__popup.fade-out {
+  animation: widthOut 0.7s ease-in-out forwards;
+}
+
+.signin__start.fade-in {
+  animation: opIn 0.7s ease-in-out forwards;
+}
+
+.signin__start.fade-out {
+  animation: opOut 0.7s ease-in-out forwards;
+}
+
+.signin {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.signin__popup {
+  border-radius: 20px;
+  width: 865px;
+  height: 576px;
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.signin__popup__containerTitle {
+  width: 805px; /* Примерно 805px на экране 1920px */
+  height: 224px; /* Примерно 189px на экране 1080px */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px; /* 30px */
+}
+
+.signin__popup__containerTitle__con__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 50px; /* Примерно 50px на экране 1920px */
+  color: #fff;
+  width: 424px; /* Примерно 424px */
+}
+
+.signin__popup__containerTitle__con__subtitle {
+  margin-top: 10px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px; /* Примерно 20px */
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.signin__popup__containerTitle__navlink {
+  width: 158px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+}
+
+.signin__popup__containerTitle__navlink__img {
+  width: 30px;
+  height: 30px;
+}
+
+.signin__popup__containerInput {
+  width: 804px;
+  height: 170px;
+  margin-top: 122px; /* Примерно 182px */
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.signin__popup__containerInput__label {
+  border-radius: 140px;
+  width: 795px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.signin__popup__containerInput__label__img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-left: 20px;
+}
+
+.signin__popup__containerInput__label__input {
+  border-radius: 140px;
+  width: 795px;
+  height: 50px;
+  background: #242424;
+  padding-left: 60px; /* Примерно 30px */
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px; /* Примерно 14px */
+  color: #fff;
+}
+
+.signin__popup__containerInput__label__input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px; /* Примерно 14px */
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.signin__popup__containerInput__btn {
+  cursor: pointer;
+  border-radius: 140px; /* 140px */
+  width: 108px; /* Примерно 108px */
+  height: 50px; /* Примерно 50px */
+  background: #fff;
+}
+
+.signin__popup__containerInput__btn__img {
+  width: 31px;
+  height: 30px;
+}
+
+.signin__popup__containerBtns {
+  width: 805px; /* Примерно 805px */
+  height: 30px; /* Примерно 30px */
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin__popup__containerBtns__btn {
+  width: 166px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px; /* Примерно 14px */
+  color: #e74b4b;
+}
+
+.signin__popup__containerBtns__btn__img {
+  width: 30px; /* Примерно 31px */
+  height: 30px; /* Примерно 30px */
+}
+
+.signin__popup__containerBtns__btnsub {
+  width: 227px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #2bc6b3;
+}
+
+.signin__popup__containerBtns__btnsub__img {
+  width: 30px;
+  height: 30px;
+}
+
+/**/
+
+.signin__copyrite {
+  width: 247px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 40px;
+  z-index: 1;
+  gap: 14px;
+}
+
+.signin__copyrite__img {
+  width: 212px;
+  height: 22px;
+}
+
+.signin__copyrite__text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.2);
+}

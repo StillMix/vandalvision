@@ -1,0 +1,46 @@
+.popupOpenImg {
+  position: absolute;
+  z-index: 501;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Темный фон для лучшего фокуса на изображении */
+}
+
+
+.popupOpenImg__img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+
+.popupOpenImg__op__containerBtn__btn {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+
+.popupOpenImg__op__containerBtn__btn__img {
+  width: 30px;
+  height: 30px;
+}
+
+.popupOpenImg__op__containerBtn__btn span {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  margin-left: 10px;
+}
