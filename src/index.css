@@ -76,3 +76,15 @@ button:hover {
 a:hover{
   opacity: 0.8;
 }
+
+.red{
+  background: #a83939;
+}
+
+.yellow{
+  background: #a89d39;
+}
+
+.green{
+  background: #4fa839;
+}
