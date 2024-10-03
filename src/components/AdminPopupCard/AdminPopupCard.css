@@ -1,0 +1,129 @@
+.adminpopupcard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.adminpopupcard__popup {
+  border-radius: 20px;
+  width: 746px;
+  height: 307px;
+  background: #242424;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.adminpopupcard__popup__img {
+  border-radius: 10px;
+  width: 227px;
+  height: 227px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 40px;
+}
+
+.adminpopupcard__popup__img__container {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.adminpopupcard__popup__img:hover .adminpopupcard__popup__img__container {
+  opacity: 1;
+}
+
+.adminpopupcard__popup__img__container__img {
+  width: 30px;
+  height: 30px;
+}
+
+.adminpopupcard__popup__img__container__text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  width: 187px;
+}
+
+.adminpopupcard__popup__container {
+  height: 227px;
+  width: 419px;
+  margin-left: 20px;
+}
+
+.adminpopupcard__popup__container__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  height: 30px;
+}
+
+.adminpopupcard__popup__container__title::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.adminpopupcard__popup__container__element {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.adminpopupcard__popup__container__element:first-of-type {
+  margin-top: 0px;
+}
+
+.adminpopupcard__popup__container__element__img {
+  width: 30px;
+  height: 30px;
+}
+
+.adminpopupcard__popup__container__element__text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  height: 18px;
+  margin-left: 10px;
+}
+
+.adminpopupcard__popup__container__element__input {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 3px;
+}
+
+.adminpopupcard__popup__container__element__input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.adminpopupcard__popup__container__element__diff {
+  border-radius: 60px;
+  width: 86px;
+  height: 25px;
+  background: #414141;
+  margin-left: 5px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}

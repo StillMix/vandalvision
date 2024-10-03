@@ -10,6 +10,7 @@ import Arc from "../../images/Admin/arc.svg";
 import Colorses from "../../images/Admin/capel.svg";
 import Razmer from "../../images/Admin/razmer.svg";
 import Star from "../../images/Admin/star.svg";
+import AdminPopupCard from "../AdminPopupCard/AdminPopupCard";
 
 function Admin() {
   const navigate = useNavigate();
@@ -20,6 +21,10 @@ function Admin() {
   const [isFormStart, setIsFormStart] = useState(false);
   const [isFirstForm, setIsFirstForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [isOpenPopupCard, setIsopenPopupCard] = useState(false);
+  const [PopupCardOp, setPopupCardOp] = useState(null);
+  const [PopupCardNew, setPopupCardNew] = useState(false);
 
   const card = [
     {
@@ -229,7 +234,10 @@ function Admin() {
                     </div>
                   </div>
                   <div className="admin__start__cards__card__opcon__btns">
-                    <button className="admin__start__cards__card__opcon__btns__btn">Редактировать</button>
+                    <button className="admin__start__cards__card__opcon__btns__btn" onClick={() =>{
+                      setIsopenPopupCard(true);
+                      setPopupCardOp(i);
+                    }}>Редактировать</button>
                     <button className="admin__start__cards__card__opcon__btns__btn">Удалить</button>
                   </div>
                 </div>           
@@ -237,6 +245,9 @@ function Admin() {
             ))}
           </div>
         </div>
+        {isOpenPopupCard ? (
+          <AdminPopupCard op={PopupCardOp} new={PopupCardNew}/>
+        ) : null}
       </div>
       <div className="admin__copyrite">
         <img src={Logo} alt="logo" className="admin__copyrite__img" />
