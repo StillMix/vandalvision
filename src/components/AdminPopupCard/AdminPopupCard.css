@@ -8,6 +8,16 @@
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease; /* Плавный переход для изменения opacity */
+}
+
+.adminpopupcard.in {
+  opacity: 1;
+}
+
+.adminpopupcard.out {
+  opacity: 0;
 }
 
 .adminpopupcard__popup {
@@ -27,6 +37,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 40px;
+
 }
 
 .adminpopupcard__popup__img__container {
@@ -40,6 +51,10 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.adminpopupcard__popup__img__nondisable .adminpopupcard__popup__img__container {
+  opacity: 1;
 }
 
 .adminpopupcard__popup__img:hover .adminpopupcard__popup__img__container {
@@ -126,4 +141,29 @@
   font-size: 14px;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.adminpopupcard__popup__container__btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.adminpopupcard__popup__container__btns__btn {
+  border-radius: 140px;
+  width: 197px;
+  height: 30px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background: #414141;
+}
+
+
+.open {
+  visibility: visible;
+  opacity: 1;
 }

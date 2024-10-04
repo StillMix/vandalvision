@@ -151,7 +151,9 @@ function Admin() {
               value={searchTerm} 
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button className="admin__start__btns__new">
+            <button onClick={() => {
+              setIsopenPopupCard(true)
+            }} className="admin__start__btns__new">
               <img
                 alt="icon"
                 src={NewFile}
@@ -246,7 +248,7 @@ function Admin() {
           </div>
         </div>
         {isOpenPopupCard ? (
-          <AdminPopupCard op={PopupCardOp} new={PopupCardNew}/>
+          <AdminPopupCard setPopupCardOp={setPopupCardOp} setIsopenPopupCard={setIsopenPopupCard} op={PopupCardOp} new={PopupCardNew}/>
         ) : null}
       </div>
       <div className="admin__copyrite">

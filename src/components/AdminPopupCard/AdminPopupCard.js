@@ -1,20 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AdminPopupCard.css";
 import NewImg from "../../images/Admin/newImg.svg";
 import Arc from "../../images/Admin/arc.svg";
 import Colorses from "../../images/Admin/capel.svg";
 import Razmer from "../../images/Admin/razmer.svg";
 import Star from "../../images/Admin/star.svg";
+import AdminPopupCardImg from "../AdminPopupCardImg/AdminPopupCardImg";
 
 function AdminPopupCard(props) {
+  const op = props.op || {};
+
   const [formValues, setFormValues] = useState({
-    NameInput: props.op.name ? props.op.name : "",
-    ArcInput: props.op.arc ? props.op.arc : "",
-    ColorsInput: props.op.colors ? props.op.colors : "",
-    RazmerInput: props.op.razm ? props.op.razm : "",
-    ImgInput: props.op.img ? props.op.img : "",
-    DiffInput: props.op.difficulty ? props.op.difficulty : "",
+    NameInput: op.name ? op.name : "",
+    ArcInput: op.arc ? op.arc : "",
+    ColorsInput: op.colors ? op.colors : "",
+    RazmerInput: op.razm ? op.razm : "",
+    ImgInput: op.img ? op.img : "",
+    DiffInput: op.difficulty ? op.difficulty : "",
   });
+  const [close, setClose] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [openImg, setOpenImg] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 10); // Задержка для плавного появления
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -25,10 +37,19 @@ function AdminPopupCard(props) {
   }
 
   return (
-    <div className="adminpopupcard">
+    <div
+      className={`adminpopupcard ${isMounted && !close ? "in" : "out"} ${
+        openImg ? "imgOpen" : ""
+      }`}
+    >
       <div className="adminpopupcard__popup">
         <button
-          className="adminpopupcard__popup__img"
+          onClick={() => {
+            setOpenImg(true);
+          }}
+          className={`adminpopupcard__popup__img ${
+            formValues.ImgInput ? "" : "adminpopupcard__popup__img__nondisable"
+          }`}
           style={{ backgroundImage: `url(${formValues.ImgInput})` }}
         >
           <div className="adminpopupcard__popup__img__container">
@@ -157,7 +178,40 @@ function AdminPopupCard(props) {
               Сложно
             </button>
           </div>
+          <div className="adminpopupcard__popup__container__btns">
+            <button
+              onClick={() => {
+                setClose(true);
+                setTimeout(() => {
+                  props.setIsopenPopupCard(false);
+                  props.setPopupCardOp("");
+                }, 500);
+              }}
+              className="adminpopupcard__popup__container__btns__btn"
+            >
+              Создать новый файл
+            </button>
+            <button
+              onClick={() => {
+                setClose(true);
+                setTimeout(() => {
+                  props.setIsopenPopupCard(false);
+                  props.setPopupCardOp("");
+                }, 500);
+              }}
+              className="adminpopupcard__popup__container__btns__btn"
+            >
+              Отменить создание
+            </button>
+          </div>
         </div>
+        {openImg && (
+          <AdminPopupCardImg
+            setForm={setFormValues}
+            op={formValues.ImgInput}
+            setCloseImg={setOpenImg}
+          />
+        )}
       </div>
     </div>
   );
