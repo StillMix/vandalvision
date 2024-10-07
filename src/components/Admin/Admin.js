@@ -11,6 +11,7 @@ import Colorses from "../../images/Admin/capel.svg";
 import Razmer from "../../images/Admin/razmer.svg";
 import Star from "../../images/Admin/star.svg";
 import AdminPopupCard from "../AdminPopupCard/AdminPopupCard";
+import AdminPopupPersons from "../AdminPopupPersons/AdminPopupPersons";
 
 function Admin() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Admin() {
 
   const [isOpenPopupCard, setIsopenPopupCard] = useState(false);
   const [PopupCardOp, setPopupCardOp] = useState(null);
-  const [PopupCardNew, setPopupCardNew] = useState(false);
+  const [isPersonOpen, setIsPersonOpen] = useState(false);
 
   const card = [
     {
@@ -148,12 +149,15 @@ function Admin() {
               placeholder="Поиск артикуля"
               type="text"
               className="admin__start__btns__input"
-              value={searchTerm} 
+              value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button onClick={() => {
-              setIsopenPopupCard(true)
-            }} className="admin__start__btns__new">
+            <button
+              onClick={() => {
+                setIsopenPopupCard(true);
+              }}
+              className="admin__start__btns__new"
+            >
               <img
                 alt="icon"
                 src={NewFile}
@@ -164,7 +168,9 @@ function Admin() {
               </span>
             </button>
             {admins ? (
-              <button className="admin__start__btns__person">
+              <button onClick={() => {
+                setIsPersonOpen(true)
+              }} className="admin__start__btns__person">
                 <img
                   alt="icon"
                   src={Person}
@@ -208,19 +214,19 @@ function Admin() {
                           className="admin__start__cards__card__opcon_op__containerone__text__img"
                         />
                         <span className="admin__start__cards__card__opcon_op__containerone__text__span">
-                        Цветов: {i.colors}
+                          Цветов: {i.colors}
                         </span>
                       </p>
                     </div>
                     <div className="admin__start__cards__card__opcon_op__containertwo">
-                    <p className="admin__start__cards__card__opcon_op__containertwo__text">
+                      <p className="admin__start__cards__card__opcon_op__containertwo__text">
                         <img
                           alt="icon"
                           src={Arc}
                           className="admin__start__cards__card__opcon_op__containertwo__text__img"
                         />
                         <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
-                        Размер: {i.razm}
+                          Размер: {i.razm}
                         </span>
                       </p>
                       <p className="admin__start__cards__card__opcon_op__containertwo__text">
@@ -230,26 +236,49 @@ function Admin() {
                           className="admin__start__cards__card__opcon_op__containertwo__text__img"
                         />
                         <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
-                        Сложность:<span className={`admin__start__cards__card__opcon_op__containertwo__text__span__diff ${i.difficulty === "hard" && "red"} ${i.difficulty === "normal" && "yellow"} ${i.difficulty === "eazy" && "green"}`}>{i.difficulty === "hard" && "Сложно" } {i.difficulty === "normal" && "Средняя"} {i.difficulty === "eazy" && "Легко"}</span>
+                          Сложность:
+                          <span
+                            className={`admin__start__cards__card__opcon_op__containertwo__text__span__diff ${
+                              i.difficulty === "hard" && "red"
+                            } ${i.difficulty === "normal" && "yellow"} ${
+                              i.difficulty === "eazy" && "green"
+                            }`}
+                          >
+                            {i.difficulty === "hard" && "Сложно"}{" "}
+                            {i.difficulty === "normal" && "Средняя"}{" "}
+                            {i.difficulty === "eazy" && "Легко"}
+                          </span>
                         </span>
                       </p>
                     </div>
                   </div>
                   <div className="admin__start__cards__card__opcon__btns">
-                    <button className="admin__start__cards__card__opcon__btns__btn" onClick={() =>{
-                      setIsopenPopupCard(true);
-                      setPopupCardOp(i);
-                    }}>Редактировать</button>
-                    <button className="admin__start__cards__card__opcon__btns__btn">Удалить</button>
+                    <button
+                      className="admin__start__cards__card__opcon__btns__btn"
+                      onClick={() => {
+                        setIsopenPopupCard(true);
+                        setPopupCardOp(i);
+                      }}
+                    >
+                      Редактировать
+                    </button>
+                    <button className="admin__start__cards__card__opcon__btns__btn">
+                      Удалить
+                    </button>
                   </div>
-                </div>           
+                </div>
               </div>
             ))}
           </div>
         </div>
         {isOpenPopupCard ? (
-          <AdminPopupCard setPopupCardOp={setPopupCardOp} setIsopenPopupCard={setIsopenPopupCard} op={PopupCardOp} new={PopupCardNew}/>
+          <AdminPopupCard
+            setPopupCardOp={setPopupCardOp}
+            setIsopenPopupCard={setIsopenPopupCard}
+            op={PopupCardOp}
+          />
         ) : null}
+        {isPersonOpen ? <AdminPopupPersons setIsPersonOpen={setIsPersonOpen}/> : null}
       </div>
       <div className="admin__copyrite">
         <img src={Logo} alt="logo" className="admin__copyrite__img" />
