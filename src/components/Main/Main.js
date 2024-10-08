@@ -109,7 +109,7 @@ function Main() {
                 </div>
                 <button
                   onClick={handleNavLinkClick}
-                  className="main__popup__containerTitle__navlink"
+                  className="main__popup__containerTitle__navlink for1024"
                 >
                   <img
                     src={SingIn}
@@ -137,6 +137,7 @@ function Main() {
                   type="submit"
                   className="main__popup__containerInput__btn"
                 >
+                  <p className="main__popup__containerInput__btn__text">Поиск</p>
                   <img
                     src={Search}
                     className="main__popup__containerInput__btn__img"
@@ -147,7 +148,7 @@ function Main() {
 
               {/* Дополнительные кнопки */}
               <div className="main__popup__containerBtns">
-                <p className="main__popup__containerBtns__title">
+                <p className="main__popup__containerBtns__title for1024">
                   <img
                     alt="icon"
                     className="main__popup__containerBtns__title__img"
@@ -166,6 +167,25 @@ function Main() {
                   />
                   Не могу найти
                 </button>
+                <button
+                  onClick={handleNavLinkClick}
+                  className="main__popup__containerTitle__navlink for768"
+                >
+                  <img
+                    src={SingIn}
+                    className="main__popup__containerTitle__navlink__img"
+                    alt="icon"
+                  />
+                  Войти как администратор
+                </button>
+                <p className="main__popup__containerBtns__title for768">
+                  <img
+                    alt="icon"
+                    className="main__popup__containerBtns__title__img"
+                    src={Img}
+                  />
+                  Ищите артикул на обратной или лицевой стороне
+                </p>
               </div>
             </div>
           </>

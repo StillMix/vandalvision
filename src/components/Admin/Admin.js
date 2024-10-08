@@ -10,6 +10,7 @@ import Arc from "../../images/Admin/arc.svg";
 import Colorses from "../../images/Admin/capel.svg";
 import Razmer from "../../images/Admin/razmer.svg";
 import Star from "../../images/Admin/star.svg";
+import Menu from "../../images/Admin/menu.svg";
 import AdminPopupCard from "../AdminPopupCard/AdminPopupCard";
 import AdminPopupPersons from "../AdminPopupPersons/AdminPopupPersons";
 
@@ -115,178 +116,318 @@ function Admin() {
   );
 
   return (
-    <div className="admin">
-      <div
-        className={`admin__popup ${
-          isFormStart ? "fade-out" : isFirstForm ? "fade-in" : null
-        }`}
-      >
+    <>
+      <div className="admin for1024">
         <div
-          className={`admin__start ${isClosingStart ? "fade-out" : "fade-in"}`}
+          className={`admin__popup ${
+            isFormStart ? "fade-out" : isFirstForm ? "fade-in" : null
+          }`}
         >
-          <div className="admin__start__header">
-            <p className="admin__start__header__title">
-              Панель администратора
-              <span>
-                {admins ? "Senior Administrator" : "Standard employee"}
-              </span>
-            </p>
-            <button
-              type="button"
-              onClick={handleSubmit}
-              className="admin__start__header__btn"
-            >
-              <img
-                alt="icon"
-                className="admin__start__header__btn__img"
-                src={SignInIcon}
-              />
-              Выйти из панели администратора
-            </button>
-          </div>
-          <div className="admin__start__btns">
-            <input
-              placeholder="Поиск артикуля"
-              type="text"
-              className="admin__start__btns__input"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button
-              onClick={() => {
-                setIsopenPopupCard(true);
-              }}
-              className="admin__start__btns__new"
-            >
-              <img
-                alt="icon"
-                src={NewFile}
-                className="admin__start__btns__new__img"
-              />
-              <span className="admin__start__btns__new__span">
-                Создать новый файл
-              </span>
-            </button>
-            {admins ? (
-              <button onClick={() => {
-                setIsPersonOpen(true)
-              }} className="admin__start__btns__person">
+          <div
+            className={`admin__start ${
+              isClosingStart ? "fade-out" : "fade-in"
+            }`}
+          >
+            <div className="admin__start__header">
+              <p className="admin__start__header__title">
+                Панель администратора
+                <span>
+                  {admins ? "Senior Administrator" : "Standard employee"}
+                </span>
+              </p>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="admin__start__header__btn"
+              >
                 <img
                   alt="icon"
-                  src={Person}
-                  className="admin__start__btns__person__img"
+                  className="admin__start__header__btn__img"
+                  src={SignInIcon}
                 />
-                <span className="admin__start__btns__person__span">
-                  Сотрудники
+                Выйти из панели администратора
+              </button>
+            </div>
+            <div className="admin__start__btns">
+              <input
+                placeholder="Поиск артикуля"
+                type="text"
+                className="admin__start__btns__input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button
+                onClick={() => {
+                  setIsopenPopupCard(true);
+                }}
+                className="admin__start__btns__new"
+              >
+                <img
+                  alt="icon"
+                  src={NewFile}
+                  className="admin__start__btns__new__img"
+                />
+                <span className="admin__start__btns__new__span">
+                  Создать новый файл
                 </span>
               </button>
-            ) : null}
-          </div>
-          <div className="admin__start__cards">
-            {filteredCards.map((i) => (
-              <div key={i.id} className="admin__start__cards__card">
-                <img
-                  alt="cardImg"
-                  src={i.img}
-                  className="admin__start__cards__card__img"
-                />
-                <div className="admin__start__cards__card__conimg"> </div>
-                <div className="admin__start__cards__card__opcon">
-                  <p className="admin__start__cards__card__opcon__title">
-                    {i.name}
-                  </p>
-                  <div className="admin__start__cards__card__opcon_op">
-                    <div className="admin__start__cards__card__opcon_op__containerone">
-                      <p className="admin__start__cards__card__opcon_op__containerone__text">
-                        <img
-                          alt="icon"
-                          src={Razmer}
-                          className="admin__start__cards__card__opcon_op__containerone__text__img"
-                        />
-                        <span className="admin__start__cards__card__opcon_op__containerone__text__span">
-                          Артикул: {i.arc}
-                        </span>
-                      </p>
-                      <p className="admin__start__cards__card__opcon_op__containerone__text">
-                        <img
-                          alt="icon"
-                          src={Colorses}
-                          className="admin__start__cards__card__opcon_op__containerone__text__img"
-                        />
-                        <span className="admin__start__cards__card__opcon_op__containerone__text__span">
-                          Цветов: {i.colors}
-                        </span>
-                      </p>
-                    </div>
-                    <div className="admin__start__cards__card__opcon_op__containertwo">
-                      <p className="admin__start__cards__card__opcon_op__containertwo__text">
-                        <img
-                          alt="icon"
-                          src={Arc}
-                          className="admin__start__cards__card__opcon_op__containertwo__text__img"
-                        />
-                        <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
-                          Размер: {i.razm}
-                        </span>
-                      </p>
-                      <p className="admin__start__cards__card__opcon_op__containertwo__text">
-                        <img
-                          alt="icon"
-                          src={Star}
-                          className="admin__start__cards__card__opcon_op__containertwo__text__img"
-                        />
-                        <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
-                          Сложность:
-                          <span
-                            className={`admin__start__cards__card__opcon_op__containertwo__text__span__diff ${
-                              i.difficulty === "hard" && "red"
-                            } ${i.difficulty === "normal" && "yellow"} ${
-                              i.difficulty === "eazy" && "green"
-                            }`}
-                          >
-                            {i.difficulty === "hard" && "Сложно"}{" "}
-                            {i.difficulty === "normal" && "Средняя"}{" "}
-                            {i.difficulty === "eazy" && "Легко"}
+              {admins ? (
+                <button
+                  onClick={() => {
+                    setIsPersonOpen(true);
+                  }}
+                  className="admin__start__btns__person"
+                >
+                  <img
+                    alt="icon"
+                    src={Person}
+                    className="admin__start__btns__person__img"
+                  />
+                  <span className="admin__start__btns__person__span">
+                    Сотрудники
+                  </span>
+                </button>
+              ) : null}
+            </div>
+            <div className="admin__start__cards">
+              {filteredCards.map((i) => (
+                <div key={i.id} className="admin__start__cards__card">
+                  <img
+                    alt="cardImg"
+                    src={i.img}
+                    className="admin__start__cards__card__img"
+                  />
+                  <div className="admin__start__cards__card__conimg"> </div>
+                  <div className="admin__start__cards__card__opcon">
+                    <p className="admin__start__cards__card__opcon__title">
+                      {i.name}
+                    </p>
+                    <div className="admin__start__cards__card__opcon_op">
+                      <div className="admin__start__cards__card__opcon_op__containerone">
+                        <p className="admin__start__cards__card__opcon_op__containerone__text">
+                          <img
+                            alt="icon"
+                            src={Razmer}
+                            className="admin__start__cards__card__opcon_op__containerone__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containerone__text__span">
+                            Артикул: {i.arc}
                           </span>
-                        </span>
-                      </p>
+                        </p>
+                        <p className="admin__start__cards__card__opcon_op__containerone__text">
+                          <img
+                            alt="icon"
+                            src={Colorses}
+                            className="admin__start__cards__card__opcon_op__containerone__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containerone__text__span">
+                            Цветов: {i.colors}
+                          </span>
+                        </p>
+                      </div>
+                      <div className="admin__start__cards__card__opcon_op__containertwo">
+                        <p className="admin__start__cards__card__opcon_op__containertwo__text">
+                          <img
+                            alt="icon"
+                            src={Arc}
+                            className="admin__start__cards__card__opcon_op__containertwo__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
+                            Размер: {i.razm}
+                          </span>
+                        </p>
+                        <p className="admin__start__cards__card__opcon_op__containertwo__text">
+                          <img
+                            alt="icon"
+                            src={Star}
+                            className="admin__start__cards__card__opcon_op__containertwo__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
+                            Сложность:
+                            <span
+                              className={`admin__start__cards__card__opcon_op__containertwo__text__span__diff ${
+                                i.difficulty === "hard" && "red"
+                              } ${i.difficulty === "normal" && "yellow"} ${
+                                i.difficulty === "eazy" && "green"
+                              }`}
+                            >
+                              {i.difficulty === "hard" && "Сложно"}{" "}
+                              {i.difficulty === "normal" && "Средняя"}{" "}
+                              {i.difficulty === "eazy" && "Легко"}
+                            </span>
+                          </span>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="admin__start__cards__card__opcon__btns">
-                    <button
-                      className="admin__start__cards__card__opcon__btns__btn"
-                      onClick={() => {
-                        setIsopenPopupCard(true);
-                        setPopupCardOp(i);
-                      }}
-                    >
-                      Редактировать
-                    </button>
-                    <button className="admin__start__cards__card__opcon__btns__btn">
-                      Удалить
-                    </button>
+                    <div className="admin__start__cards__card__opcon__btns">
+                      <button
+                        className="admin__start__cards__card__opcon__btns__btn"
+                        onClick={() => {
+                          setIsopenPopupCard(true);
+                          setPopupCardOp(i);
+                        }}
+                      >
+                        Редактировать
+                      </button>
+                      <button className="admin__start__cards__card__opcon__btns__btn">
+                        Удалить
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          {isOpenPopupCard ? (
+            <AdminPopupCard
+              setPopupCardOp={setPopupCardOp}
+              setIsopenPopupCard={setIsopenPopupCard}
+              op={PopupCardOp}
+            />
+          ) : null}
+          {isPersonOpen ? (
+            <AdminPopupPersons setIsPersonOpen={setIsPersonOpen} />
+          ) : null}
         </div>
-        {isOpenPopupCard ? (
-          <AdminPopupCard
-            setPopupCardOp={setPopupCardOp}
-            setIsopenPopupCard={setIsopenPopupCard}
-            op={PopupCardOp}
-          />
-        ) : null}
-        {isPersonOpen ? <AdminPopupPersons setIsPersonOpen={setIsPersonOpen}/> : null}
+        <div className="admin__copyrite">
+          <img src={Logo} alt="logo" className="admin__copyrite__img" />
+          <p className="admin__copyrite__text">
+            2024 © Copyright. All rights reserved
+          </p>
+        </div>
       </div>
-      <div className="admin__copyrite">
-        <img src={Logo} alt="logo" className="admin__copyrite__img" />
-        <p className="admin__copyrite__text">
-          2024 © Copyright. All rights reserved
-        </p>
+      <div className="admin for768">
+        <div
+          className={`admin__popup ${
+            isFormStart ? "fade-out" : isFirstForm ? "fade-in" : null
+          }`}
+        >
+          <div
+            className={`admin__start ${
+              isClosingStart ? "fade-out" : "fade-in"
+            }`}
+          >
+            <div className="admin__start__header">
+              <p className="admin__start__header__title">
+                Панель администратора
+                <span>{admins ? "SA" : "SE"}</span>
+              </p>
+            </div>
+            <div className="admin__start__btns">
+              <input
+                placeholder="Поиск артикуля"
+                type="text"
+                className="admin__start__btns__input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="admin__start__cards">
+              {filteredCards.map((i) => (
+                <div
+                  key={i.id}
+                  style={{
+                    backgroundImage: `url(${i.img})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: "cover",
+                  }}
+                  className="admin__start__cards__card"
+                >
+                  <div className="admin__start__cards__card_backimg"> </div>
+                  <div className="admin__start__cards__card__conimg"> </div>
+                  <div className="admin__start__cards__card__opcon">
+                    <p className="admin__start__cards__card__opcon__title">
+                      {i.name}
+                    </p>
+                    <div className="admin__start__cards__card__opcon_op">
+                      <div className="admin__start__cards__card__opcon_op__containerone">
+                        <p className="admin__start__cards__card__opcon_op__containerone__text">
+                          <img
+                            alt="icon"
+                            src={Razmer}
+                            className="admin__start__cards__card__opcon_op__containerone__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containerone__text__span">
+                            Артикул: {i.arc}
+                          </span>
+                        </p>
+                        <p className="admin__start__cards__card__opcon_op__containerone__text">
+                          <img
+                            alt="icon"
+                            src={Colorses}
+                            className="admin__start__cards__card__opcon_op__containerone__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containerone__text__span">
+                            Цветов: {i.colors}
+                          </span>
+                        </p>
+                      </div>
+                      <div className="admin__start__cards__card__opcon_op__containertwo">
+                        <p className="admin__start__cards__card__opcon_op__containertwo__text">
+                          <img
+                            alt="icon"
+                            src={Arc}
+                            className="admin__start__cards__card__opcon_op__containertwo__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
+                            Размер: {i.razm}
+                          </span>
+                        </p>
+                        <p className="admin__start__cards__card__opcon_op__containertwo__text">
+                          <img
+                            alt="icon"
+                            src={Star}
+                            className="admin__start__cards__card__opcon_op__containertwo__text__img"
+                          />
+                          <span className="admin__start__cards__card__opcon_op__containertwo__text__span">
+                            Сложность:
+                            <span
+                              className={`admin__start__cards__card__opcon_op__containertwo__text__span__diff ${
+                                i.difficulty === "hard" && "red"
+                              } ${i.difficulty === "normal" && "yellow"} ${
+                                i.difficulty === "eazy" && "green"
+                              }`}
+                            >
+                              {i.difficulty === "hard" && "Сложно"}{" "}
+                              {i.difficulty === "normal" && "Средняя"}{" "}
+                              {i.difficulty === "eazy" && "Легко"}
+                            </span>
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="admin__start__cards__card__opcon__btns">
+                      <button
+                        className="admin__start__cards__card__opcon__btns__btn"
+                        onClick={() => {
+                          setIsopenPopupCard(true);
+                          setPopupCardOp(i);
+                        }}
+                      >
+                        Редактировать
+                      </button>
+                      <button className="admin__start__cards__card__opcon__btns__btn">
+                        Удалить
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {isOpenPopupCard ? (
+            <AdminPopupCard
+              setPopupCardOp={setPopupCardOp}
+              setIsopenPopupCard={setIsopenPopupCard}
+              op={PopupCardOp}
+            />
+          ) : null}
+          {isPersonOpen ? (
+            <AdminPopupPersons setIsPersonOpen={setIsPersonOpen} />
+          ) : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

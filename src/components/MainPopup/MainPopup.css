@@ -12,8 +12,6 @@
 
 .main__popup__containerImgQuest__popup {
   border-radius: 20px; /* 20px */
-  width: 865px; /* Примерно 865px */
-  height: 308px; /* Примерно 308px */
   background: #1c1c1c;
   display: flex;
   align-items: center;
@@ -39,56 +37,234 @@
 }
 
 .main__popup__containerImgQuest__popup__img {
-  width: 248px; /* Примерно 248px */
-  height: 248px; /* Примерно 248px */
   object-fit: contain;
-}
-
-.main__popup__containerImgQuest__popup__containerText {
-  width: 356px; /* Примерно 356px */
-  height: 248px; /* Примерно 248px */
-  margin-left: 20px; /* Примерно 20px */
 }
 
 .main__popup__containerImgQuest__popup__containerText__title {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 25px; /* Примерно 25px */
   color: #fff;
 }
 
 .main__popup__containerImgQuest__popup__containerText__subtitle {
   font-family: var(--font-family);
   font-weight: 500;
-  margin-top: 10px; /* Примерно 10px */
-  font-size: 20px; /* Примерно 20px */
   color: rgba(255, 255, 255, 0.5);
 }
 
 .main__popup__containerImgQuest__popup__containerBtn {
-  height: 248px; /* Примерно 248px */
-  width: 152px; /* Примерно 152px */
   display: flex;
   align-items: end;
-  margin-left: 29px; /* Примерно 29px */
 }
 
 .main__popup__containerImgQuest__popup__containerBtn__btn {
   cursor: pointer;
   background: transparent;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px; /* Примерно 50px */
   border: none;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
 }
 
-.main__popup__containerImgQuest__popup__containerBtn__btn__img {
-  width: 31px; /* Примерно 31px */
-  height: 50px; /* Примерно 50px */
+@media screen and (min-width: 1920px) {
+  .main__popup__containerImgQuest {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main__popup__containerImgQuest__popup {
+    width: 865px; /* Примерно 865px */
+    height: 308px; /* Примерно 308px */
+  }
+
+  .main__popup__containerImgQuest__popup__img {
+    width: 248px; /* Примерно 248px */
+    height: 248px; /* Примерно 248px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText {
+    width: 356px; /* Примерно 356px */
+    height: 248px; /* Примерно 248px */
+    margin-left: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__title {
+    font-size: 25px; /* Примерно 25px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__subtitle {
+    margin-top: 10px; /* Примерно 10px */
+    font-size: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn {
+    height: 248px; /* Примерно 248px */
+    width: 152px; /* Примерно 152px */
+    margin-left: 29px; /* Примерно 29px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn {
+    width: 100%;
+    height: 50px; /* Примерно 50px */
+    font-size: 14px;
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn__img {
+    width: 31px; /* Примерно 31px */
+    height: 50px; /* Примерно 50px */
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .main__popup__containerImgQuest {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main__popup__containerImgQuest__popup {
+    width: 865px; /* Примерно 865px */
+    height: 308px; /* Примерно 308px */
+  }
+
+  .main__popup__containerImgQuest__popup__img {
+    width: 248px; /* Примерно 248px */
+    height: 248px; /* Примерно 248px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText {
+    width: 356px; /* Примерно 356px */
+    height: 248px; /* Примерно 248px */
+    margin-left: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__title {
+    font-size: 25px; /* Примерно 25px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__subtitle {
+    margin-top: 10px; /* Примерно 10px */
+    font-size: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn {
+    height: 248px; /* Примерно 248px */
+    width: 152px; /* Примерно 152px */
+    margin-left: 29px; /* Примерно 29px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn {
+    width: 100%;
+    height: 50px; /* Примерно 50px */
+    font-size: 14px;
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn__img {
+    width: 31px; /* Примерно 31px */
+    height: 50px; /* Примерно 50px */
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .main__popup__containerImgQuest {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main__popup__containerImgQuest__popup {
+    width: 865px; /* Примерно 865px */
+    height: 308px; /* Примерно 308px */
+  }
+
+  .main__popup__containerImgQuest__popup__img {
+    width: 248px; /* Примерно 248px */
+    height: 248px; /* Примерно 248px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText {
+    width: 356px; /* Примерно 356px */
+    height: 248px; /* Примерно 248px */
+    margin-left: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__title {
+    font-size: 25px; /* Примерно 25px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__subtitle {
+    margin-top: 10px; /* Примерно 10px */
+    font-size: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn {
+    height: 248px; /* Примерно 248px */
+    width: 152px; /* Примерно 152px */
+    margin-left: 29px; /* Примерно 29px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn {
+    width: 100%;
+    height: 50px; /* Примерно 50px */
+    font-size: 14px;
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn__img {
+    width: 31px; /* Примерно 31px */
+    height: 50px; /* Примерно 50px */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main__popup__containerImgQuest {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main__popup__containerImgQuest__popup {
+    width: 646px;
+    height: 225px; /* Примерно 308px */
+    position: relative;
+  }
+
+  .main__popup__containerImgQuest__popup__img {
+    width: 167px;
+    height: 167px;
+  }
+
+  .main__popup__containerImgQuest__popup__containerText {
+    width: 286px; /* Примерно 356px */
+    height: 167px; /* Примерно 248px */
+    margin-left: 20px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__title {
+    font-size: 20px; /* Примерно 25px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerText__subtitle {
+    margin-top: 10px; /* Примерно 10px */
+    font-size: 14px; /* Примерно 20px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn {
+    height: 167px; /* Примерно 248px */
+    width: 100px; /* Примерно 152px */
+    margin-left: 29px; /* Примерно 29px */
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn {
+    width: 147px;
+    height: 25px;
+    font-size: 14px;
+    position: absolute;
+    right: 30px;
+
+  }
+
+  .main__popup__containerImgQuest__popup__containerBtn__btn__img {
+    width: 25px; /* Примерно 31px */
+    height: 25px; /* Примерно 50px */
+  }
 }

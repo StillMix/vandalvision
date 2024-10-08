@@ -44,3 +44,34 @@
   color: #fff;
   margin-left: 10px;
 }
+
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .popupOpenImg__op__containerBtn__btn {
+    background: #e74b4b;
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+    align-items: center;
+    height: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .popupOpenImg__op__containerBtn__btn {
+    background: #e74b4b;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    height: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+  }
+}

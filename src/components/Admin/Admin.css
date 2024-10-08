@@ -16,22 +16,6 @@
   }
 }
 
-@keyframes widthOut {
-  from {
-    width: 1394px;
-    height: 784px;
-  }
-  to {
-    width: 865px;
-    height: 576px;
-  }
-}
-
-.admin__popup.fade-out {
-  animation: widthOut 0.7s ease-in-out forwards;
-  animation-delay: 1s;
-}
-
 .admin__start.fade-in {
   animation: opIn 0.7s ease-in-out forwards;
 }
@@ -51,8 +35,6 @@
 }
 .admin__popup {
   border-radius: 20px;
-  width: 1394px;
-  height: 784px;
   background: #1c1c1c;
   display: flex;
   flex-direction: column;
@@ -69,142 +51,92 @@
   align-items: center;
 }
 .admin__start__header {
-  width: 1334px;
-  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 26px;
 }
 
 .admin__start__header__title {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
 }
 
 .admin__start__header__title span {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.3);
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 60px;
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 26px;
 }
 
 .admin__start__header__btn {
-  width: 281px;
-  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #e74b4b;
 }
 
-.admin__start__header__btn__img {
-  width: 30px;
-  height: 30px;
-}
-
 .admin__start__btns {
-  width: 1334px;
-  height: 50px;
-  margin-top: 23px;
   display: flex;
-  gap: 10px;
   flex-wrap: nowrap;
 }
 
 .admin__start__btns__input {
   border-radius: 140px;
-  width: 971px;
-  height: 50px;
   background: #242424;
   margin: 0;
-  padding-left: 30px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: white;
 }
 
 .admin__start__btns__input::placeholder {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.2);
 }
 
 .admin__start__btns__new {
   border-radius: 140px;
-  width: 234px;
-  height: 50px;
   background: #242424;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.admin__start__btns__new__img {
-  width: 30px;
-  height: 30px;
 }
 
 .admin__start__btns__new__span {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
-  margin-left: 10px;
 }
 
 .admin__start__btns__person {
   border-radius: 140px;
-  width: 180px;
-  height: 50px;
   background: #242424;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.admin__start__btns__person__img {
-  width: 30px;
-  height: 30px;
-}
-
 .admin__start__btns__person__span {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
-  margin-left: 10px;
 }
 
 .admin__start__cards {
-  padding-bottom: 30px;
   overflow-x: auto;
-  margin-top: 30px;
-  width: 1334px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .admin__start__cards__card {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  width: 662px;
-  height: 185px;
   background: #242424;
   display: flex;
   align-items: center;
@@ -214,40 +146,25 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 190px;
-  height: 185px;
   background: linear-gradient(90deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
 }
 
-.admin__start__cards__card__img {
-  width: 190px;
-  height: 185px;
-}
-
 .admin__start__cards__card__opcon {
-  width: 382px;
-  height: 145px;
-  margin-left: 30px;
   text-align: left;
 }
 
 .admin__start__cards__card__opcon__title {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 24px;
   color: #fff;
 }
 
 .admin__start__cards__card__opcon_op {
-  height: 70px;
   display: flex;
   flex-wrap: nowrap;
-  margin-top: 5px;
-  gap: 30px;
 }
 
 .admin__start__cards__card__opcon_op__containerone {
-  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -256,7 +173,6 @@
 .admin__start__cards__card__opcon_op__containerone__text {
   display: flex;
   align-items: center;
-  width: 139px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -266,95 +182,886 @@
 .admin__start__cards__card__opcon_op__containerone__text__span {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
-  margin-left: 10px;
-}
-
-.admin__start__cards__card__opcon_op__containerone__text__img {
-  width: 30px;
-  height: 30px;
 }
 
 .admin__start__cards__card__opcon_op__containertwo {
-  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .admin__start__cards__card__opcon_op__containertwo__text {
-  height: 30px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
 
-.admin__start__cards__card__opcon_op__containertwo__text__img {
-  width: 30px;
-  height: 30px;
-}
-
 .admin__start__cards__card__opcon_op__containertwo__text__span {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
-  margin-left: 10px;
-  width: 175px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
 
 .admin__start__cards__card__opcon_op__containertwo__text__span__diff {
-  margin-left: 5px;
   display: block;
   border-radius: 60px;
-  width: 86px;
-  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .admin__start__cards__card__opcon__btns {
-  width: 100%;
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
 }
 
 .admin__start__cards__card__opcon__btns__btn {
   background: #414141;
   border-radius: 140px;
-  padding: 6px 30px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
 }
 
 /**/
 .admin__copyrite {
-  width: 247px;
-  height: 52px;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: absolute;
-  bottom: 40px;
   z-index: 1;
-  gap: 14px;
-}
-
-.admin__copyrite__img {
-  width: 212px;
-  height: 22px;
 }
 
 .admin__copyrite__text {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 13px;
   color: rgba(255, 255, 255, 0.2);
+}
+
+.for768 {
+  display: none;
+}
+
+@media screen and (min-width: 1920px) {
+  @keyframes widthOut {
+    from {
+      width: 1394px;
+      height: 784px;
+    }
+    to {
+      width: 865px;
+      height: 576px;
+    }
+  }
+
+  .admin__popup.fade-out {
+    animation: widthOut 0.7s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+
+  .admin__popup {
+    width: 1394px;
+    height: 784px;
+  }
+
+  .admin__start__header {
+    width: 1334px;
+    height: 30px;
+    margin-top: 26px;
+  }
+
+  .admin__start__header__title {
+    font-size: 14px;
+  }
+
+  .admin__start__header__title span {
+    font-size: 14px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 26px;
+  }
+
+  .admin__start__header__btn {
+    width: 281px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__header__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns {
+    width: 1334px;
+    height: 50px;
+    margin-top: 23px;
+    gap: 10px;
+  }
+
+  .admin__start__btns__input {
+    width: 971px;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__btns__input::placeholder {
+    font-size: 14px;
+  }
+
+  .admin__start__btns__new {
+    width: 234px;
+    height: 50px;
+  }
+
+  .admin__start__btns__new__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__new__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__btns__person {
+    width: 180px;
+    height: 50px;
+  }
+
+  .admin__start__btns__person__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__person__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards {
+    padding-bottom: 30px;
+    margin-top: 30px;
+    width: 1334px;
+    gap: 10px;
+  }
+
+  .admin__start__cards__card {
+    width: 662px;
+    height: 185px;
+  }
+
+  .admin__start__cards__card__conimg {
+    width: 190px;
+    height: 185px;
+    left: 1px;
+  }
+
+  .admin__start__cards__card__img {
+    width: 190px;
+    height: 185px;
+  }
+
+  .admin__start__cards__card__opcon {
+    width: 382px;
+    height: 145px;
+    margin-left: 30px;
+  }
+
+  .admin__start__cards__card__opcon__title {
+    font-size: 24px;
+  }
+
+  .admin__start__cards__card__opcon_op {
+    height: 70px;
+    margin-top: 5px;
+    gap: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text {
+    width: 139px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text {
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+    width: 175px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span__diff {
+    margin-left: 5px;
+    width: 86px;
+    height: 25px;
+  }
+  .admin__start__cards__card__opcon__btns {
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .admin__start__cards__card__opcon__btns__btn {
+    padding: 6px 30px;
+    font-size: 14px;
+  }
+
+  /**/
+  .admin__copyrite {
+    width: 247px;
+    height: 52px;
+    bottom: 40px;
+    gap: 14px;
+  }
+
+  .admin__copyrite__img {
+    width: 212px;
+    height: 22px;
+  }
+
+  .admin__copyrite__text {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  @keyframes widthOut {
+    from {
+      width: 100vw;
+      height: 100vh;
+    }
+    to {
+      width: 865px;
+      height: 576px;
+    }
+  }
+
+  .admin__popup.fade-out {
+    animation: widthOut 0.7s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+
+  .admin__popup {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .admin__start__header {
+    width: 1229px;
+    height: 30px;
+    margin-top: 26px;
+  }
+
+  .admin__start__header__title {
+    font-size: 14px;
+  }
+
+  .admin__start__header__title span {
+    font-size: 14px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 26px;
+  }
+
+  .admin__start__header__btn {
+    width: 281px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__header__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns {
+    width: 1229px;
+    height: 50px;
+    margin-top: 23px;
+    gap: 10px;
+  }
+
+  .admin__start__btns__input {
+    width: 971px;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__btns__input::placeholder {
+    font-size: 14px;
+  }
+
+  .admin__start__btns__new {
+    width: 234px;
+    height: 50px;
+  }
+
+  .admin__start__btns__new__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__new__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__btns__person {
+    width: 180px;
+    height: 50px;
+  }
+
+  .admin__start__btns__person__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__person__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards {
+    padding-bottom: 30px;
+    margin-top: 30px;
+    width: 1229px;
+    gap: 10px;
+  }
+
+  .admin__start__cards__card {
+    width: 609px;
+    height: 185px;
+  }
+
+  .admin__start__cards__card__conimg {
+    width: 190px;
+    height: 185px;
+    left: 1px;
+  }
+
+  .admin__start__cards__card__img {
+    width: 190px;
+    height: 185px;
+  }
+
+  .admin__start__cards__card__opcon {
+    width: 382px;
+    height: 145px;
+    margin-left: 30px;
+  }
+
+  .admin__start__cards__card__opcon__title {
+    font-size: 24px;
+  }
+
+  .admin__start__cards__card__opcon_op {
+    height: 70px;
+    margin-top: 5px;
+    gap: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text {
+    width: 139px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text {
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+    width: 175px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span__diff {
+    margin-left: 5px;
+    width: 86px;
+    height: 25px;
+  }
+  .admin__start__cards__card__opcon__btns {
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .admin__start__cards__card__opcon__btns__btn {
+    padding: 6px 30px;
+    font-size: 14px;
+  }
+
+  /**/
+  .admin__copyrite {
+    display: none;
+    width: 247px;
+    height: 52px;
+    bottom: 40px;
+    gap: 14px;
+  }
+
+  .admin__copyrite__img {
+    width: 212px;
+    height: 22px;
+  }
+
+  .admin__copyrite__text {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  @keyframes widthOut {
+    from {
+      width: 100vw;
+      height: 100vh;
+    }
+    to {
+      width: 865px;
+      height: 576px;
+    }
+  }
+
+  .admin__popup.fade-out {
+    animation: widthOut 0.7s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+
+  .admin__popup {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .admin__start__header {
+    width: 974px;
+    height: 30px;
+    margin-top: 26px;
+  }
+
+  .admin__start__header__title {
+    font-size: 14px;
+  }
+
+  .admin__start__header__title span {
+    font-size: 14px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 26px;
+  }
+
+  .admin__start__header__btn {
+    width: 281px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__header__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns {
+    width: 974px;
+    height: 50px;
+    margin-top: 23px;
+    gap: 10px;
+  }
+
+  .admin__start__btns__input {
+    width: 537px;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .admin__start__btns__input::placeholder {
+    font-size: 14px;
+  }
+
+  .admin__start__btns__new {
+    width: 234px;
+    height: 50px;
+  }
+
+  .admin__start__btns__new__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__new__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__btns__person {
+    width: 180px;
+    height: 50px;
+  }
+
+  .admin__start__btns__person__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__btns__person__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards {
+    padding-bottom: 30px;
+    margin-top: 30px;
+    width: 974px;
+    gap: 10px;
+  }
+
+  .admin__start__cards__card {
+    width: 472px;
+    height: 171px;
+  }
+
+  .admin__start__cards__card__conimg {
+    width: 85px;
+    height: 171px;
+    left: -18px;
+  }
+
+  .admin__start__cards__card__img {
+    width: 66px;
+    height: 171px;
+  }
+
+  .admin__start__cards__card__opcon {
+    width: 382px;
+    height: 145px;
+    margin-left: 6px;
+  }
+
+  .admin__start__cards__card__opcon__title {
+    font-size: 24px;
+  }
+
+  .admin__start__cards__card__opcon_op {
+    height: 70px;
+    margin-top: 5px;
+    gap: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text {
+    width: 139px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo {
+    height: 70px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text {
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span {
+    font-size: 14px;
+    margin-left: 10px;
+    width: 175px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span__diff {
+    margin-left: 5px;
+    width: 86px;
+    height: 25px;
+  }
+  .admin__start__cards__card__opcon__btns {
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .admin__start__cards__card__opcon__btns__btn {
+    padding: 6px 30px;
+    font-size: 14px;
+  }
+
+  /**/
+  .admin__copyrite {
+    display: none;
+    width: 247px;
+    height: 52px;
+    bottom: 40px;
+    gap: 14px;
+  }
+
+  .admin__copyrite__img {
+    width: 212px;
+    height: 22px;
+  }
+
+  .admin__copyrite__text {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .for1024 {
+    display: none;
+  }
+  .for768 {
+    display: flex;
+  }
+  @keyframes widthOut {
+    from {
+      width: 100vw;
+      height: 100vh;
+    }
+    to {
+      width: 865px;
+      height: 576px;
+    }
+  }
+
+  .admin__popup.fade-out {
+    animation: widthOut 0.7s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+
+  .admin__popup {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .admin__start__header {
+    width: 728px;
+    margin-top: 21px;
+  }
+
+  .admin__start__header__title {
+    width: 225px;
+    height: 26px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .admin__start__header__title span {
+    width: 41px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .admin__start__btns {
+    width: 728px;
+    height: 48px;
+    margin-top: 16px;
+  }
+
+  .admin__start__btns__input {
+    border-radius: 140px;
+    width: 728px;
+    height: 48px;
+    padding-left: 20px;
+  }
+
+  .admin__start__cards {
+    width: 728px;
+    gap: 14px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .admin__start__cards__card {
+    border-radius: 20px;
+    width: 357px;
+    height: 148px;
+    position: relative;
+  }
+  .admin__start__cards__card_backimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  .admin__start__cards__card__conimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
+    border-radius: 20px;
+  }
+
+  .admin__start__cards__card__opcon {
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    left: 18px;
+  }
+
+  .admin__start__cards__card__opcon__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .admin__start__cards__card__opcon_op {
+    margin-top: 10px;
+    width: 269px;
+    height: 50px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone {
+    width: 96px;
+    height: 50px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text {
+    width: 96px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .admin__start__cards__card__opcon_op__containerone__text__span {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 5px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo {
+    width: 149px;
+    height: 50px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text {
+    width: 149px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 5px;
+  }
+
+  .admin__start__cards__card__opcon_op__containertwo__text__span__diff {
+    border-radius: 60px;
+    width: 60px;
+    height: 20px;
+    margin-left: 5px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .admin__start__cards__card__opcon__btns {
+    margin-top: 10px;
+    width: 282px;
+    height: 30px;
+    justify-content: space-between;
+  }
+  .admin__start__cards__card__opcon__btns__btn {
+    padding: 6px 25px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    background: #414141;
+  }
 }

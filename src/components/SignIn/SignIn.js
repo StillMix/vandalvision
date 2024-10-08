@@ -66,7 +66,7 @@ function SignIn() {
                 и снова без лишних деталей
               </p>
             </div>
-            <button onClick={handleNavLinkClick} className="signin__popup__containerTitle__navlink">
+            <button onClick={handleNavLinkClick} className="signin__popup__containerTitle__navlink for1024">
               <img
                 src={BtnBack}
                 className="signin__popup__containerTitle__navlink__img"
@@ -139,6 +139,14 @@ function SignIn() {
                 />
                 Войти как администратор
               </button>
+              <button type="button" onClick={handleNavLinkClick} className="signin__popup__containerTitle__navlink for768">
+              <img
+                src={BtnBack}
+                className="signin__popup__containerTitle__navlink__img"
+                alt="icon"
+              />
+              Вернуться назад
+            </button>
             </div>
           </form>
         </div>
