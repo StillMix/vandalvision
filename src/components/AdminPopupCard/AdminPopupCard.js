@@ -79,7 +79,7 @@ function AdminPopupCard(props) {
               className="adminpopupcard__popup__container__element__img"
             />
             <p className="adminpopupcard__popup__container__element__text">
-              Размер:
+              Артикул:
             </p>
             <input
               className="adminpopupcard__popup__container__element__input"

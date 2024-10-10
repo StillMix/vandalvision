@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'; // импортируем Brow
 import App from './components/App';
 import './index.css';
 
+
 // теперь обернём компонент App в BrowserRouter
 ReactDOM.render(
   <React.StrictMode>

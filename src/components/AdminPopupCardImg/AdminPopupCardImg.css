@@ -23,8 +23,6 @@
 
 .adminpopupcard__popup__imgSrc__popup {
   border-radius: 20px;
-  width: 745px;
-  height: 263px;
   background: #242424;
   display: flex;
   align-items: center;
@@ -32,65 +30,252 @@
 }
 
 .adminpopupcard__popup__imgSrc__popup__title {
-  width: 685px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 30px;
   color: #fff;
-  margin-top: 20px;
 }
 
 .adminpopupcard__popup__imgSrc__popup__subtitle {
-  width: 685px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 10px;
 }
 
 .adminpopupcard__popup__imgSrc__popup__input {
   border-radius: 140px;
-  width: 685px;
-  height: 50px;
   background: #2e2e2e;
-  margin-top: 40px;
-  padding-left: 30px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.915);
 }
 
 .adminpopupcard__popup__imgSrc__popup__input::placeholder {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.2);
 }
 
 .adminpopupcard__popup__imgSrc__popup__btns {
-  width: 685px;
-  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
 .adminpopupcard__popup__imgSrc__popup__btns__btn {
   display: flex;
-  height: 30px;
   align-items: center;
 }
 
-.adminpopupcard__popup__imgSrc__popup__btns__btn__img {
-  width: 30px;
-  height: 30px;
-}
-
 .adminpopupcard__popup__imgSrc__popup__btns__btn__span {
-  margin-left: 9px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
   color: #fff;
+}
+
+@media screen and (min-width: 1920px) {
+  .adminpopupcard__popup__imgSrc__popup {
+    width: 745px;
+    height: 263px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__title {
+    width: 685px;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__subtitle {
+    width: 685px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input {
+    width: 685px;
+    height: 50px;
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input::placeholder {
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns {
+    width: 685px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn {
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__span {
+    margin-left: 9px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .adminpopupcard__popup__imgSrc__popup {
+    width: 745px;
+    height: 263px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__title {
+    width: 685px;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__subtitle {
+    width: 685px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input {
+    width: 685px;
+    height: 50px;
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input::placeholder {
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns {
+    width: 685px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn {
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__span {
+    margin-left: 9px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .adminpopupcard__popup__imgSrc__popup {
+    width: 745px;
+    height: 263px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__title {
+    width: 685px;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__subtitle {
+    width: 685px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input {
+    width: 685px;
+    height: 50px;
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input::placeholder {
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns {
+    width: 685px;
+    margin-top: 20px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn {
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__span {
+    margin-left: 9px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminpopupcard__popup__imgSrc {
+    align-items: end;
+  }
+  .adminpopupcard__popup__imgSrc__popup {
+    border-radius: 20px 20px 0 0;
+    width: 100vw;
+    height: 244px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__title {
+    width: 724px;
+    font-size: 25px;
+    margin-top: 39px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__subtitle {
+    width: 724px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input {
+    width: 724px;
+    height: 50px;
+    margin-top: 20px;
+    padding-left: 30px;
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__input::placeholder {
+    font-size: 14px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns {
+    width: 724px;
+    margin-top: 10px;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn {
+    border-radius: 140px;
+    width: 356px;
+    height: 45px;
+    background: #414141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__img {
+    display: none;
+  }
+
+  .adminpopupcard__popup__imgSrc__popup__btns__btn__span {
+    margin-left: 0;
+    font-size: 14px;
+  }
 }

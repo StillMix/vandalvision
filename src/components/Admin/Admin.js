@@ -11,6 +11,7 @@ import Colorses from "../../images/Admin/capel.svg";
 import Razmer from "../../images/Admin/razmer.svg";
 import Star from "../../images/Admin/star.svg";
 import Menu from "../../images/Admin/menu.svg";
+import Arrow from "../../images/Admin/arrow.svg";
 import AdminPopupCard from "../AdminPopupCard/AdminPopupCard";
 import AdminPopupPersons from "../AdminPopupPersons/AdminPopupPersons";
 
@@ -27,6 +28,10 @@ function Admin() {
   const [isOpenPopupCard, setIsopenPopupCard] = useState(false);
   const [PopupCardOp, setPopupCardOp] = useState(null);
   const [isPersonOpen, setIsPersonOpen] = useState(false);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpenPopup, setIsMenuOpenPopup] = useState(false);
+  const [isMenuOpenOne, setIsMenuOpenOne] = useState(false);
 
   const card = [
     {
@@ -103,12 +108,21 @@ function Admin() {
     },
   ];
   function handleSubmit() {
-    setIsFirstForm(true);
-    setIsClosingStart(true);
-    setIsFormStart(true);
-    setTimeout(() => {
-      navigate("/signin");
-    }, 2000);
+    if (isMenuOpen) {
+      setIsMenuOpenOne(true);
+      setIsMenuOpenPopup(false);
+      setTimeout(() => {
+        setTimeout(() => {
+          setIsFirstForm(true);
+          setIsClosingStart(true);
+          setIsFormStart(true);
+          setTimeout(() => {
+            navigate("/signin");
+          }, 2000);
+        }, 800);
+        setIsMenuOpen(false);
+      }, 800);
+    }
   }
 
   const filteredCards = card.filter((i) =>
@@ -312,6 +326,21 @@ function Admin() {
                 Панель администратора
                 <span>{admins ? "SA" : "SE"}</span>
               </p>
+              <button
+                className="admin__start__header__btn"
+                onClick={() => {
+                  setIsMenuOpen(true);
+                  setTimeout(() => {
+                    setIsMenuOpenPopup(true);
+                  }, 800);
+                }}
+              >
+                <img
+                  src={Menu}
+                  className="admin__start__header__btn__img"
+                  alt="icon"
+                />
+              </button>
             </div>
             <div className="admin__start__btns">
               <input
@@ -328,7 +357,7 @@ function Admin() {
                   key={i.id}
                   style={{
                     backgroundImage: `url(${i.img})`,
-                    backgroundRepeat: 'no-repeat',
+                    backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                   }}
                   className="admin__start__cards__card"
@@ -425,6 +454,105 @@ function Admin() {
           {isPersonOpen ? (
             <AdminPopupPersons setIsPersonOpen={setIsPersonOpen} />
           ) : null}
+        </div>
+
+        <div
+          className={`admin__popup__menu ${
+            isMenuOpen ? "open" : isMenuOpenOne ? "close" : null
+          }`}
+        >
+          <div
+            className={`admin__popup__menu__popup ${
+              isMenuOpenPopup ? "open" : isMenuOpenOne ? "close" : null
+            }`}
+          >
+            <button
+              onClick={() => {
+                setIsMenuOpenOne(true);
+                setIsMenuOpenPopup(false);
+                setTimeout(() => {
+                  setIsMenuOpen(false);
+                }, 800);
+              }}
+              className="admin__popup__menu__popup__btn"
+            >
+              <img
+                alt="icon"
+                src={Arrow}
+                className="admin__popup__menu__popup__btn__img"
+              />
+            </button>
+            <div className="admin__popup__menu__popup__con">
+              <p className="admin__popup__menu__popup__con__tip">
+                {admins ? "Senior Administrator" : "Standard employee"}
+              </p>
+              {admins ? (
+                <button
+                  onClick={() => {
+                    setIsMenuOpenOne(true);
+                    setIsMenuOpenPopup(false);
+                    setTimeout(() => {
+                      setTimeout(() => {
+                        setIsPersonOpen(true);
+                      }, 800);
+                      setIsMenuOpen(false);
+                    }, 800);
+                  }}
+                  className="admin__popup__menu__popup__con__btn"
+                >
+                  <img
+                    alt="icon"
+                    className="admin__popup__menu__popup__con__btn__img"
+                    src={Person}
+                  />
+                  <span className="admin__popup__menu__popup__con__btn__span">
+                    Сотрудники
+                  </span>
+                </button>
+              ) : null}
+              <button
+                onClick={() => {
+                  setIsMenuOpenOne(true);
+                  setIsMenuOpenPopup(false);
+                  setTimeout(() => {
+                    setTimeout(() => {
+                      setIsopenPopupCard(true);
+                    }, 800);
+                    setIsMenuOpen(false);
+                  }, 800);
+                }}
+                className="admin__popup__menu__popup__con__btn"
+              >
+                <img
+                  alt="icon"
+                  className="admin__popup__menu__popup__con__btn__img"
+                  src={NewFile}
+                />
+                <span className="admin__popup__menu__popup__con__btn__span">
+                  Создать новый файл
+                </span>
+              </button>
+              <button
+                onClick={handleSubmit}
+                className="admin__popup__menu__popup__con__btn"
+              >
+                <img
+                  alt="icon"
+                  className="admin__popup__menu__popup__con__btn__img"
+                  src={SignInIcon}
+                />
+                <span className="admin__popup__menu__popup__con__btn__span">
+                  Выйти из панели
+                </span>
+              </button>
+            </div>
+            <div className="admin__copyrite">
+              <img src={Logo} alt="logo" className="admin__copyrite__img" />
+              <p className="admin__copyrite__text">
+                2024 © Copyright. All rights reserved
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>
